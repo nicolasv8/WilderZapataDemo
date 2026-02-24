@@ -1,16 +1,17 @@
 "use client"
 
+import React from "react"
 import Script from "next/script"
 
-declare global {
+declare module "react" {
     namespace JSX {
         interface IntrinsicElements {
             "elevenlabs-convai": React.DetailedHTMLProps<
-                React.HTMLAttributes<HTMLElement> & {
-                    "agent-id": string
-                },
+                React.HTMLAttributes<HTMLElement>,
                 HTMLElement
-            >
+            > & {
+                "agent-id": string
+            }
         }
     }
 }
